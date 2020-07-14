@@ -10,7 +10,9 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "handlebars": "^4.7.6",
     "next": "^9.4.2",
+    "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -18,6 +20,7 @@
     "postcss-preset-env": "^6.7.0",
     "sass": "^1.26.10",
     "styled-jsx-plugin-postcss": "^2.0.1",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "tailwindcss-blend-mode": "^1.0.0"
   }
 }
