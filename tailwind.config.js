@@ -3,6 +3,12 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    mixBlendMode: ['responsive'],
+    backgroundBlendMode: ['responsive'],
+    isolation: ['responsive'],
+  },
+  plugins: [
+      require('tailwindcss-blend-mode')(),
+  ],
 };
