@@ -12,7 +12,7 @@
   "dependencies": {
     "handlebars": "^4.7.6",
     "next": "^9.4.2",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
