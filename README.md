@@ -1,5 +1,5 @@
 # Markdown Profiles
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&style=plastic)](https://actions-badge.atrox.dev/atrox/sync-dotenv/goto)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fdannyverp%2Fmarkdownprofile%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/dannyverp/markdownprofile/goto?ref=master)
 [![GitHub](https://img.shields.io/github/license/dannyverp/markdownprofile?style=plastic)](LICENSE)
 
 ![GitHub followers](https://img.shields.io/github/followers/dannyverp?style=social)
