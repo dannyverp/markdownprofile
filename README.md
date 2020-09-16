@@ -7,7 +7,7 @@
 
 Markdown Profiles is a project that generates markdown files for those that want an awesome Github profile.It provides several templates for you to use.
 
-![Markdown Profiles Preview](public/img/pagepreview.png)
+[![Markdown Profiles Preview](public/img/pagepreview.png)](https://markdownprofile.com/)
 
 ## Table of contents
 
