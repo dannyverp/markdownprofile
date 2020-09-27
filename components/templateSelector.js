@@ -5,7 +5,7 @@ class TemplateSelector extends React.Component {
 
     render() {
         const className = "flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800" +
-            (this.props.active === true ? " bg-orange-400" : '');
+            (this.props.activeTemplate === this.props.template ? " bg-orange-400" : '');
         return (
             <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
                 <div

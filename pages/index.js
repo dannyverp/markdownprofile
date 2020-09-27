@@ -45,7 +45,7 @@ class Index extends React.Component {
                                 let element = Template.getSelector();
                                 return React.cloneElement(element, {
                                     key: index,
-                                    active: Template.name === this.state.currentTemplate.name,
+                                    activeTemplate: this.state.currentTemplate,
                                     onTemplateChange: this.handleTemplateChange,
                                     template: Template
                                 })

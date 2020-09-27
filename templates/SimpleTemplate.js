@@ -50,7 +50,6 @@ class SimpleTemplate extends Template {
             title="Simple Template"
             author="Danny Verpoort"
             description="A simple template just like in the header."
-            active="false"
         />
     }
 
