@@ -33,6 +33,10 @@ body {
   }
 }
 
+a {
+  @apply text-orange-400;
+}
+
 @media (max-width: 500px) {
   .github-corner:hover .octo-arm {
     animation: none
@@ -58,6 +62,19 @@ body {
 
   p {
     @apply mb-5;
+  }
+}
+
+.profile-status-form {
+  @apply mx-3 mb-2;
+  @screen md {
+    @apply flex;
+  }
+  & > div {
+    @apply px-3 mb-6;
+      @screen md {
+      @apply w-1/2 mb-0;
+    }
   }
 }
 

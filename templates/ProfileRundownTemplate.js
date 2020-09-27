@@ -54,7 +54,6 @@ class ProfileRundownTemplate extends Template {
             title="Profile status block"
             author="Anurag Hazra"
             description={<span>A status card displaying information about your profile. Based on <a target="_blank"
-                                                                                                    className="text-orange-400"
                                                                                                     href="https://github.com/anuraghazra/github-readme-stats">Anurag Hazra's work</a>.</span>}
             active="false"
         />
@@ -62,8 +61,8 @@ class ProfileRundownTemplate extends Template {
 
     render = () => (
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-            <div className="-mx-3 md:flex mb-2">
-                <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="profile-status-form">
+                <div>
                     <label
                         className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                         htmlFor="grid-linkedin">
@@ -77,7 +76,7 @@ class ProfileRundownTemplate extends Template {
                         name="username"
                     />
                 </div>
-                <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+                <div>
                     <label
                         className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                         htmlFor="grid-twitter">
