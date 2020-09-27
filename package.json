@@ -14,7 +14,8 @@
     "next": "^9.5.3",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",
