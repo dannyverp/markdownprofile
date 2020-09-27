@@ -62,7 +62,7 @@ class CodeResult extends React.Component {
                                 Copied
                             </div>
                         )}
-                        <pre className="language-css h-full" ref={this.codeArea}>
+                        <pre className="whitespace-pre-wrap language-css h-full" ref={this.codeArea}>
             <code className="whitespace-pre-wrap" dangerouslySetInnerHTML={{__html: this.props.template}}/>
           </pre>
                     </div>
