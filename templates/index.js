@@ -1,7 +1,9 @@
-import SimpleTemplate from './SimpleTemplate'
+import MediumArticles from './MediumArticles'
 import ProfileRundownTemplate from './ProfileRundownTemplate'
+import SimpleTemplate from './SimpleTemplate'
 
 export {
-    SimpleTemplate,
-    ProfileRundownTemplate
+    ProfileRundownTemplate,
+    MediumArticles,
+    SimpleTemplate
 }
