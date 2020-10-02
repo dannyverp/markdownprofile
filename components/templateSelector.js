@@ -2,7 +2,6 @@ class TemplateSelector extends React.Component {
   constructor() {
     super();
   }
-
   render() {
     const className =
       'flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800' +
