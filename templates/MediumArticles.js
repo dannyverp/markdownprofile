@@ -6,22 +6,11 @@ class ProfileRundownTemplate extends Template {
 
     constructor() {
         super();
-        this.themes = [
-            'default',
-            'dark',
-            'radical',
-            'merko',
-            'gruvbox',
-            'tokyonight',
-            'onedark',
-            'cobalt',
-            'synthwave',
-            'highcontrast',
-            'dracula'
-        ];
+        this.types = ['horizontal', 'vertical']
         this.state = {
-            username: 'dannyverp',
-            theme: this.themes[0]
+            username: 'Souravdey777',
+            type: this.types[0],
+            amount: 2
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -29,6 +18,24 @@ class ProfileRundownTemplate extends Template {
     componentDidMount() {
         this.props.onMarkdownChange(
             (this.getTemplate())
+        );
+    }
+
+    incrementAmount = () => {
+        let state = this.state;
+        state.amount--;
+        this.setState(state);
+        this.props.onMarkdownChange(
+            (Handlebars.compile(this.getTemplate()))(state)
+        );
+    }
+
+    decrementAmount = () => {
+        let state = this.state;
+        state.amount++
+        this.setState(state);
+        this.props.onMarkdownChange(
+            (Handlebars.compile(this.getTemplate()))(state)
         );
     }
 
@@ -45,15 +52,16 @@ class ProfileRundownTemplate extends Template {
     }
 
     getTemplate() {
-        return "[![" + this.state.username + "'s github stats](https://github-readme-stats.vercel.app/api?username=" + this.state.username + "&show_icons=true&theme=" + this.state.theme + ")](https://github.com/" + this.state.username + "/)";
+        return "[![Sourav Dey's Blog Cards](https://github-cards-external-blogs.souravdey777.vercel.app/getMediumBlogs?username=" + this.state.username + "&type=" + this.state.type + "&limit=" + this.state.amount + ")](https://medium.com/@" + this.state.username + ")"
     }
 
     static getSelector() {
         return <TemplateSelector
-            image="img/statusprofile.svg"
-            title="Profile status block"
-            author={<a target="_blank" href="https://github.com/anuraghazra/github-readme-stats">Anurag Hazra</a>}
-            description={<span>A status card displaying info about your profile.</span>}
+            image="img/mediumarticles.svg"
+            title="Medium blog"
+            author={<a target="_blank"
+                       href="https://github.com/Souravdey777/Github-Cards-External-Blogs">Sourav Dey</a>}
+            description={<span>A card displaying your latest Medium articles.</span>}
             active="false"
         />
     }
@@ -78,19 +86,42 @@ class ProfileRundownTemplate extends Template {
                 <div>
                     <label
                         className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                        htmlFor="grid-linkedin">
+                        Amount of blog items
+                    </label>
+                    <div class="flex flex-row h-12 w-2 w-full rounded-lg relative bg-transparent mt-1">
+                        <button onClick={this.incrementAmount}
+                                className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                            <span className="m-auto text-2xl font-thin">−</span>
+                        </button>
+                        <input
+                            className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+                            id="grid-user" type="number"
+                            value={this.state.amount}
+                            onChange={this.handleChange}
+                            name="amount"
+                        />
+                        <button onClick={this.decrementAmount}
+                                className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                            <span className="m-auto text-2xl font-thin">+</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label
+                        className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                         htmlFor="grid-twitter">
-                        Theme
+                        Card layout
                     </label>
                     <div className="relative">
                         <select
                             onChange={this.handleChange}
-                            name="theme"
+                            name="type"
                             id="theme"
-                            name="theme"
                             className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         >
-                            {this.themes.map(function (theme, index) {
-                                return <option value={theme} key={index}>{theme}</option>
+                            {this.types.map(function (type, index) {
+                                return <option value={type} key={index}>{type}</option>
                             })}
                         </select>
                         <div

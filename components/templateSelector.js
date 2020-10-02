@@ -12,6 +12,7 @@ class TemplateSelector extends React.Component {
                     className="inline-flex overflow-hidden">
                     <img
                         src={this.props.image}
+                        style={{height: '12em', width: 'auto'}}
                         alt=""
                         className="h-full w-full"/>
                 </div>
