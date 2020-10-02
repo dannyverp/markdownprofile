@@ -18,7 +18,7 @@ class TemplateSelector extends React.Component {
         className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg hover:shadow-xl cursor-pointer"
       >
         <div className="inline-flex overflow-hidden">
-          <img src={this.props.image} alt="" className="h-full w-full" />
+          <img src={this.props.image} alt="" className="h-full w-full" style={{height: '200px', width: 'auto'}} />
         </div>
 
         <h2 className="mt-4 font-bold text-xl">{this.props.title}</h2>
