@@ -77,6 +77,7 @@ class SimpleTemplate extends Template {
                         Description
                     </label>
                     <textarea
+                        data-gramm={false}
                         className="h-32 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
                         id="grid-description" type="text"
                         onChange={this.handleChange}
