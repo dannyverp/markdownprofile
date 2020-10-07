@@ -1,6 +1,21 @@
+const { default: Contributors } = require("./contributors");
+
 class Footer extends React.Component {
     constructor() {
         super();
+    }
+
+    state = {
+        contributors: []
+      }
+
+    componentDidMount() {
+        fetch('https://api.github.com/repos/dannyverp/markdownprofile/contributors?anon=1')
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ contributors: data})
+        })
+        .catch(console.log);
     }
 
     render() {
@@ -45,6 +60,9 @@ class Footer extends React.Component {
                             <svg className="h-6 w-16 fill-current text-orange-600" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 120 60" viewBox="0 0 120 60"><path d="m26.2 48.6v-37.2c0-.5.1-1 .3-1.5s.5-.9.8-1.3c.4-.4.8-.7 1.3-.9s1-.3 1.5-.3h59.7c.5 0 1 .1 1.5.3s.9.5 1.3.9.7.8.9 1.3.3 1 .3 1.5v37.1c0 .5-.1 1-.3 1.5s-.5.9-.9 1.3-.8.7-1.3.9-1 .3-1.5.3h-59.6c-.5 0-1-.1-1.5-.3s-.9-.5-1.3-.9-.7-.8-.9-1.3c-.2-.4-.3-.9-.3-1.4z" /><path d="m68.3 24.9c.7 2.6 1.8 6.9 2.5 9.6 1.1 4.1 1.4 5 2.3 5.9.6.7 1.4 1.1 1.9 1.1 1 0 2.4-1 2.8-2.2.3-.9 5-18.4 5-18.8 0-.1-.9-.2-2.1-.1l-2.1.1-1.9 7.1c-1 4.4-1.7 6.8-1.9 6.4-.3-.8-3.5-13.5-3.5-13.6s-1-.1-2.1-.1h-2.2zm-13.6-3.8c-.7.9-.7 1.3-.7 9.8v8.9l.8.8c.8.8 1 .8 5.3.8h4.5v-3.6l-3.4-.1-3.4-.1v-5l2.1-.1 2.1-.1v-3.6h-4.3v-5h7v-3.6h-4.7c-4.6 0-4.6 0-5.3.9zm-7.6 3.4c.8.6.8.8.8 6.1 0 5.2 0 5.5-.7 6.2-.6.5-1.2.7-2.3.7h-1.6l-.1-6.9-.1-6.9h1.6c1.1.2 1.9.4 2.4.8zm-7.7 6.3v10.6h3.7c4.1 0 5.9-.5 7.1-2.2 1.3-1.6 1.5-3 1.3-9.3-.1-5.6-.2-6-.9-7.2-1.3-2.1-2.7-2.6-7.3-2.6h-4v10.7z" fill="#fff"/></svg>
                         </a>
                     </div>
+                </div>
+                <div className="md:flex center items-center justify-center">
+                    <Contributors contributors={this.state.contributors} className="md:flex center items-center justify-center"/>
                 </div>
             </footer>
         );
