@@ -2,7 +2,8 @@ import React from 'react';
 
 const Contributors = ({ contributors }) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center text-orange-500">
+            Contributors:  
             {contributors.map( (contributor) => (
                 
                     <a href={contributor.html_url} key={contributor.id}>
