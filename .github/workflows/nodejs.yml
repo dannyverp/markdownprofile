@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '16.4.2'
       - run: npm install
-      - run: npm build
+      - run: npm run build
       - run: npm run export
 
       - name: Deploy
